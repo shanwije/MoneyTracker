@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="IITMScApp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="IITMScApp.war">
+      <element id="artifact" artifact-name="IITMScApp:war exploded" />
+    </root>
+  </artifact>
+</component>

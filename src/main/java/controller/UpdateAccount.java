@@ -21,7 +21,11 @@ public class UpdateAccount {
         if (isSuccess) {
             return new TransactionServiceResponseModel(true, User.getUser().getAccount(), "");
         } else {
-            return new TransactionServiceResponseModel(false, User.getUser().getAccount(), "can't add account");
+            return new TransactionServiceResponseModel(false, User.getUser().getAccount(), "can't delete account");
         }
+    }
+
+    public static TransactionServiceResponseModel getAllTransaction() {
+        return new TransactionServiceResponseModel(true, User.getUser().getAccount(), "");
     }
 }

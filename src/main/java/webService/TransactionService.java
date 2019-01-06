@@ -36,4 +36,12 @@ public class TransactionService {
         TransactionServiceResponseModel transactionServiceResponseModel = UpdateAccount.removeTransaction(deleteTransactionModel.getID());
         return Response.ok(transactionServiceResponseModel).build();
     }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("getAllTransaction")
+    public Response getAllTransaction() {
+        TransactionServiceResponseModel transactionServiceResponseModel = UpdateAccount.getAllTransaction();
+        return Response.ok(transactionServiceResponseModel).build();
+    }
 }

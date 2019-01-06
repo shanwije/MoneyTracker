@@ -4,13 +4,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Produces(MediaType.APPLICATION_JSON)
 public class Account {
 
     private List<TransactionModel> transactions;
-    Account(){
+
+    Account() {
         transactions = new ArrayList<>();
     }
 
@@ -19,15 +19,22 @@ public class Account {
         return transactions;
     }
 
-    public boolean addNewTransaction(TransactionModel transactionModel){
+    public boolean addNewTransaction(TransactionModel transactionModel) {
+
+        if (transactionModel.getID() == null) {
             String id = transactionModel.setID();
-        return transactions.add(transactionModel);
+            System.out.println(transactionModel.toString());
+            return transactions.add(transactionModel);
+        } else {
+            return false;
+        }
+
     }
 
-    public boolean removeTransaction(String id){
+    public boolean removeTransaction(String id) {
         boolean returnval = false;
-        for(int i =0; i < transactions.size(); i++){
-            if(id.equals(transactions.get(i).getID())){
+        for (int i = 0; i < transactions.size(); i++) {
+            if (id.equals(transactions.get(i).getID())) {
                 transactions.remove(i);
                 returnval = true;
             }
@@ -36,7 +43,7 @@ public class Account {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Account" + this.transactions.toString();
     }
 }

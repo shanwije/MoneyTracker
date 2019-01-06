@@ -9,7 +9,7 @@ public class TransactionServiceResponseModel {
     private Account account;
     private String error;
 
-    public TransactionServiceResponseModel(){
+    public TransactionServiceResponseModel() {
 
     }
 

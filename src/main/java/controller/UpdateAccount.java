@@ -4,17 +4,24 @@ import Model.TransactionModel;
 import Model.TransactionServiceResponseModel;
 import Model.User;
 
-import java.util.Map;
-
 public class UpdateAccount {
 
-    public static TransactionServiceResponseModel addTransaction(TransactionModel transactionModel){
+    public static TransactionServiceResponseModel addTransaction(TransactionModel transactionModel) {
         boolean isSuccess = User.getUser().getAccount().addNewTransaction(transactionModel);
-        if(isSuccess){
+        if (isSuccess) {
             return new TransactionServiceResponseModel(true, User.getUser().getAccount(), "");
         } else {
             return new TransactionServiceResponseModel(false, User.getUser().getAccount(), "can't add account");
         }
 
+    }
+
+    public static TransactionServiceResponseModel removeTransaction(String ID) {
+        boolean isSuccess = User.getUser().getAccount().removeTransaction(ID);
+        if (isSuccess) {
+            return new TransactionServiceResponseModel(true, User.getUser().getAccount(), "");
+        } else {
+            return new TransactionServiceResponseModel(false, User.getUser().getAccount(), "can't add account");
+        }
     }
 }

@@ -2,14 +2,14 @@ package Model;
 
 public class User {
 
-    private Account account;
     private static User user = new User();
+    private Account account;
 
-    private User(){
+    private User() {
         account = new Account();
     }
 
-    public static User getUser(){
+    public static User getUser() {
         return user;
     }
 

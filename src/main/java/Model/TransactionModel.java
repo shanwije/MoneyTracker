@@ -16,12 +16,14 @@ public class TransactionModel {
     private int term;
     private String note;
     private AccountCategory category;
+    private Date date;
 
-    public TransactionModel(){
+    public TransactionModel() {
         System.out.println("Transaction object is creating");
+        this.date = new Date();
     }
 
-    String getID() {
+    public String getID() {
         return ID;
     }
 
@@ -32,9 +34,13 @@ public class TransactionModel {
     }
 
     @Override
-    public String toString(){
-        return ID+", "+ amount + ", " + type+ ", " +icon+ ", " +recurrent
-                + ", " +term+ ", " +note+ ", " +category;
+    public String toString() {
+        return ID + ", " + amount + ", " + type + ", " + icon + ", " + recurrent
+                + ", " + term + ", " + note + ", " + category;
+    }
+
+    public Date getDate() {
+        return date;
     }
 
     public AccountCategory getCategory() {
@@ -92,25 +98,4 @@ public class TransactionModel {
     public void setNote(String note) {
         this.note = note;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Date getDateModified() {
-        return dateModified;
-    }
-
-    public void setDateModified(Date dateModified) {
-        this.dateModified = dateModified;
-    }
-
-    private String id;
-    private Date dateModified;
-
-
 }

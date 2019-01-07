@@ -17,6 +17,7 @@ public class TransactionModel {
     private String note;
     private Date date;
     private CategoryModel category;
+    private String catID;
 
     public TransactionModel() {
         System.out.println("Transaction object is creating");
@@ -81,5 +82,13 @@ public class TransactionModel {
 
     public void setCategory(CategoryModel category) {
         this.category = category;
+    }
+
+    public String getCatID() {
+        return catID;
+    }
+
+    public void setCatID(String catID) {
+        this.catID = catID;
     }
 }

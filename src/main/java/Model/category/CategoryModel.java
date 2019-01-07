@@ -1,7 +1,11 @@
 package Model.category;
 
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import java.util.UUID;
 
+
+@Produces(MediaType.APPLICATION_JSON)
 public class CategoryModel {
     private CategoryType type;
     private String icon;

@@ -1,4 +1,4 @@
-package Model;
+package Model.transaction;
 
 import Model.category.CategoryModel;
 
@@ -27,7 +27,7 @@ public class TransactionModel {
         return ID;
     }
 
-    String setID() {
+    public String setID() {
         UUID id = UUID.randomUUID();
         this.ID = String.valueOf(id);
         return this.ID;

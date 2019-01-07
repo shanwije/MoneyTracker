@@ -1,6 +1,7 @@
 package Model;
 
 import Model.category.CategoryModel;
+import Model.transaction.TransactionModel;
 
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;

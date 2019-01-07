@@ -1,7 +1,7 @@
 package controller;
 
-import Model.TransactionModel;
-import Model.TransactionServiceResponseModel;
+import Model.transaction.TransactionModel;
+import Model.transaction.TransactionServiceResponseModel;
 import Model.User;
 import Model.category.CategoryModel;
 import Model.category.CategoryServiceResponseModel;

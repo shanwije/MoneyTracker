@@ -1,8 +1,8 @@
-package webService;
+package webService.subServices;
 
-import Model.DeleteTransactionModel;
-import Model.TransactionModel;
-import Model.TransactionServiceResponseModel;
+import Model.transaction.DeleteTransactionModel;
+import Model.transaction.TransactionModel;
+import Model.transaction.TransactionServiceResponseModel;
 import controller.UpdateAccount;
 
 import javax.ws.rs.*;

@@ -1,4 +1,4 @@
-package Model;
+package Model.transaction;
 
 public class DeleteTransactionModel {
     private String ID;

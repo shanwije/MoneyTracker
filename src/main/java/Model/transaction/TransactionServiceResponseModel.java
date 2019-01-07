@@ -1,4 +1,6 @@
-package Model;
+package Model.transaction;
+
+import Model.Account;
 
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;

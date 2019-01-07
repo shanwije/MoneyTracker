@@ -12,3 +12,6 @@ CMD /apache-tomcat-9.0.14/bin/catalina.sh run
 #docker build D:\eclipse-workspace\IITMScApp
 #docker run -it -p 8080:8080 5f37e3c68135
 #http://localhost:8080/IITMScApp/api/transactions/addTransaction
+#docker images
+#docker tag 5f37e3c68135 shanwije/zzz:latest
+#docker push shanwije/zzz:latest

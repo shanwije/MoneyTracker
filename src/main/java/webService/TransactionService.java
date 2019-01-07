@@ -26,7 +26,7 @@ public class TransactionService {
         TransactionServiceResponseModel transactionServiceResponseModel = UpdateAccount.addTransaction(transactionModel);
         return Response.ok(transactionServiceResponseModel)
                 .header("Access-Control-Allow-Origin", "*")
-                 .build();
+                .build();
     }
 
     @POST

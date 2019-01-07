@@ -1,5 +1,7 @@
 package Model;
 
+import Model.category.CategoryModel;
+
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.Date;
@@ -10,13 +12,11 @@ public class TransactionModel {
 
     private String ID;
     private double amount;
-    private AccountType type;
-    private String icon;
     private boolean recurrent;
     private int term;
     private String note;
-    private AccountCategory category;
     private Date date;
+    private CategoryModel category;
 
     public TransactionModel() {
         System.out.println("Transaction object is creating");
@@ -35,20 +35,12 @@ public class TransactionModel {
 
     @Override
     public String toString() {
-        return ID + ", " + amount + ", " + type + ", " + icon + ", " + recurrent
+        return ID + ", " + amount + ", " + category.toString() + ", " + recurrent
                 + ", " + term + ", " + note + ", " + category;
     }
 
     public Date getDate() {
         return date;
-    }
-
-    public AccountCategory getCategory() {
-        return category;
-    }
-
-    public void setCategory(AccountCategory category) {
-        this.category = category;
     }
 
     public double getAmount() {
@@ -57,22 +49,6 @@ public class TransactionModel {
 
     public void setAmount(double amount) {
         this.amount = amount;
-    }
-
-    public AccountType getType() {
-        return type;
-    }
-
-    public void setType(AccountType type) {
-        this.type = type;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
     }
 
     public boolean isRecurrent() {
@@ -97,5 +73,13 @@ public class TransactionModel {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public CategoryModel getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryModel category) {
+        this.category = category;
     }
 }

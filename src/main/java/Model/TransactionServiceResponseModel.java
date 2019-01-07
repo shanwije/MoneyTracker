@@ -8,15 +8,23 @@ public class TransactionServiceResponseModel {
     private boolean success;
     private Account account;
     private String error;
+    private TransactionModel lastUpdatedTransaction;
 
-    public TransactionServiceResponseModel() {
 
+    public TransactionServiceResponseModel(boolean success, Account account) {
+        this.success = success;
+        this.account = account;
     }
 
     public TransactionServiceResponseModel(boolean success, Account account, String error) {
         this.success = success;
         this.account = account;
         this.error = error;
+    }
+
+    public TransactionServiceResponseModel(boolean success, TransactionModel model) {
+        this.success = success;
+        this.lastUpdatedTransaction = model;
     }
 
     public String getError() {
@@ -41,5 +49,13 @@ public class TransactionServiceResponseModel {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public TransactionModel getLastUpdatedTransaction() {
+        return lastUpdatedTransaction;
+    }
+
+    public void setLastUpdatedTransaction(TransactionModel lastUpdatedTransaction) {
+        this.lastUpdatedTransaction = lastUpdatedTransaction;
     }
 }

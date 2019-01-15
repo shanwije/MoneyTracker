@@ -15,3 +15,4 @@ CMD /apache-tomcat-9.0.14/bin/catalina.sh run
 #docker images
 #docker tag 5f37e3c68135 shanwije/zzz:latest
 #docker push shanwije/zzz:latest
+# ubuntu@ec2-3-16-214-51.us-east-2.compute.amazonaws.com

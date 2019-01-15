@@ -25,7 +25,6 @@ public class TransactionService {
     public Response addTransaction(TransactionModel transactionModel) {
         TransactionServiceResponseModel transactionServiceResponseModel = UpdateAccount.addTransaction(transactionModel);
         return Response.ok(transactionServiceResponseModel)
-                .header("Access-Control-Allow-Origin", "*")
                 .build();
     }
 
@@ -37,7 +36,6 @@ public class TransactionService {
         System.out.println("Deleting row for the id " + deleteTransactionModel.getID());
         TransactionServiceResponseModel transactionServiceResponseModel = UpdateAccount.removeTransaction(deleteTransactionModel.getID());
         return Response.ok(transactionServiceResponseModel)
-                .header("Access-Control-Allow-Origin", "*")
                 .build();
     }
 
@@ -47,7 +45,6 @@ public class TransactionService {
     public Response getAllTransaction() {
         TransactionServiceResponseModel transactionServiceResponseModel = UpdateAccount.getAllTransaction();
         return Response.ok(transactionServiceResponseModel)
-                .header("Access-Control-Allow-Origin", "*")
                 .build();
     }
 }

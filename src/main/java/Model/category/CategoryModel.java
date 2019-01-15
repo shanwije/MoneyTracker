@@ -27,7 +27,7 @@ public class CategoryModel {
 
     public String setCatID() {
         UUID id = UUID.randomUUID();
-        this.catID = "CAT_"+ String.valueOf(id);
+        this.catID = "CAT_" + String.valueOf(id);
         return this.catID;
     }
 

@@ -71,15 +71,15 @@ public class Account {
 
     public boolean addNewTransaction(TransactionModel transactionModel) {
 
-        if(transactionModel.getCatID() != null){
+        if (transactionModel.getCatID() != null) {
             boolean fountCategory = false;
-            for(int i = 0; i < categories.size(); i++){
+            for (int i = 0; i < categories.size(); i++) {
                 if (transactionModel.getCatID().equals(categories.get(i).getCatID())) {
-                        transactionModel.setCategory(categories.get(i));
+                    transactionModel.setCategory(categories.get(i));
                     fountCategory = true;
                 }
             }
-            if(!fountCategory){
+            if (!fountCategory) {
                 // no catgories found for the given trannscation, aborted;
                 return false;
             }
@@ -87,27 +87,27 @@ public class Account {
             // no category id in the request
             return false;
         }
-            if (transactionModel.getID() == null) {
-                String id = transactionModel.setID();
-                setLastUpdatedTransaction(transactionModel);
-                System.out.println(transactionModel.toString());
-                return transactions.add(transactionModel);
-            } else {
-                // update exsisting cat
-                for (int i = 0; i < transactions.size(); i++) {
-                    if (transactionModel.getID().equals(transactions.get(i).getID())) {
-                        TransactionModel obj = transactions.get(i);
-                        obj.setCategory(transactionModel.getCategory());
-                        obj.setAmount(transactionModel.getAmount());
-                        obj.setCatID(transactionModel.getCatID());
-                        obj.setNote(transactionModel.getNote());
-                        obj.setRecurrent(transactionModel.isRecurrent());
-                        obj.setTerm(transactionModel.getTerm());
-                        return true;
-                    }
+        if (transactionModel.getID() == null) {
+            String id = transactionModel.setID();
+            setLastUpdatedTransaction(transactionModel);
+            System.out.println(transactionModel.toString());
+            return transactions.add(transactionModel);
+        } else {
+            // update exsisting cat
+            for (int i = 0; i < transactions.size(); i++) {
+                if (transactionModel.getID().equals(transactions.get(i).getID())) {
+                    TransactionModel obj = transactions.get(i);
+                    obj.setCategory(transactionModel.getCategory());
+                    obj.setAmount(transactionModel.getAmount());
+                    obj.setCatID(transactionModel.getCatID());
+                    obj.setNote(transactionModel.getNote());
+                    obj.setRecurrent(transactionModel.isRecurrent());
+                    obj.setTerm(transactionModel.getTerm());
+                    return true;
                 }
-                return false;  // no category found for the given id
             }
+            return false;  // no category found for the given id
+        }
     }
 
     public boolean removeTransaction(String id) {

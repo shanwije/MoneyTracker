@@ -1,10 +1,10 @@
 package controller;
 
-import Model.transaction.TransactionModel;
-import Model.transaction.TransactionServiceResponseModel;
 import Model.User;
 import Model.category.CategoryModel;
 import Model.category.CategoryServiceResponseModel;
+import Model.transaction.TransactionModel;
+import Model.transaction.TransactionServiceResponseModel;
 
 public class UpdateAccount {
 
@@ -36,9 +36,9 @@ public class UpdateAccount {
     public static CategoryServiceResponseModel addCategory(CategoryModel categoryModel) {
         boolean isSuccess = User.getUser().getAccount().addNewCategory(categoryModel);
         if (isSuccess) {
-            return new CategoryServiceResponseModel(true,User.getUser().getAccount().getCategories(),  User.getUser().getAccount().getLastUpdatedCategory());
+            return new CategoryServiceResponseModel(true, User.getUser().getAccount().getCategories(), User.getUser().getAccount().getLastUpdatedCategory());
         } else {
-            return new CategoryServiceResponseModel(false,  "can't add category");
+            return new CategoryServiceResponseModel(false, "can't add category");
         }
 
     }
@@ -46,13 +46,13 @@ public class UpdateAccount {
     public static CategoryServiceResponseModel removeCategory(String ID) {
         boolean isSuccess = User.getUser().getAccount().removeCategory(ID);
         if (isSuccess) {
-            return new CategoryServiceResponseModel(true,User.getUser().getAccount().getCategories());
+            return new CategoryServiceResponseModel(true, User.getUser().getAccount().getCategories());
         } else {
-            return new CategoryServiceResponseModel(false,  "can't delete category");
+            return new CategoryServiceResponseModel(false, "can't delete category");
         }
     }
 
     public static CategoryServiceResponseModel getAllCategories() {
-        return new CategoryServiceResponseModel(true,User.getUser().getAccount().getCategories());
+        return new CategoryServiceResponseModel(true, User.getUser().getAccount().getCategories());
     }
 }

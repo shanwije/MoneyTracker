@@ -23,7 +23,6 @@ public class CategoryService {
     public Response addCategory(CategoryModel categoryModel) {
         CategoryServiceResponseModel categoryServiceResponseModel = UpdateAccount.addCategory(categoryModel);
         return Response.ok(categoryServiceResponseModel)
-                .header("Access-Control-Allow-Origin", "*")
                 .build();
     }
 
@@ -35,7 +34,6 @@ public class CategoryService {
         System.out.println("Deleting row for the category id " + deleteCategoryModel.getCatID());
         CategoryServiceResponseModel categoryServiceResponseModel = UpdateAccount.removeCategory(deleteCategoryModel.getCatID());
         return Response.ok(categoryServiceResponseModel)
-                .header("Access-Control-Allow-Origin", "*")
                 .build();
     }
 
@@ -45,7 +43,6 @@ public class CategoryService {
     public Response getAllCategories() {
         CategoryServiceResponseModel categoryServiceResponseModel = UpdateAccount.getAllCategories();
         return Response.ok(categoryServiceResponseModel)
-                .header("Access-Control-Allow-Origin", "*")
                 .build();
     }
 }
